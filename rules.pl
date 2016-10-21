@@ -17,7 +17,8 @@ place_in_act(ACTIVITY, PLACE):-
 	facts:place(PLACE),
 	facts:has_act(PLACE, ACTIVITY).
 
-place_with_custom_filters(PLACE, DISTRICT, TYPE, ACTIVITY, AGE, EN_DIS, EN_TYPE, EN_ACTIVITY, EN_ACT_AGE):-
+place_with_custom_filters(PLACE, DISTRICT, TYPE, ACTIVITY, AGE, TIME, EN_DIS, EN_TYPE, EN_ACTIVITY, EN_ACT_AGE, EN_TIME):-
+	((EN_TIME, time_for_place(PLACE, TIME)); not(EN_TIME)),
 	((EN_DIS, place_in_district(DISTRICT, PLACE)); not(EN_DIS)),
 	((EN_TYPE, place_in_type(TYPE, PLACE)); not(EN_TYPE)),
 	((
