@@ -21,7 +21,39 @@ You can use `rules` appears below to find data from `facts`
     X = santorini_park ;
     false.
     ```
-    
+
+## Examples
+
+Use `TAB` or `SPACE` for multiple answers
+``` 
+$ swipl -s rules.pl 
+
+?- place_in_district(DISTRICT, cha_am_forest_park).
+DISTRICT = cha_am.
+
+?- place_in_act(ACTIVITY, cha_am_forest_park).
+ACTIVITY = natural_observation ;
+ACTIVITY = camping.
+
+?- place_in_type(temple, PLACE).
+PLACE = wat_yai_suwannaram_temple ;
+PLACE = wat_khoi_temple ;
+PLACE = saiyat_buddhist_temple ;
+PLACE = neranchararam_temple ;
+PLACE = mahathat_worawihan_temple ;
+PLACE = khao_takrao_temple ;
+PLACE = khao_luang_cave ;
+PLACE = khao_bandai_it_temple ;
+PLACE = kamphaeng_laeng_temple ;
+PLACE = chao_por_khao_yai_shrine ;
+false.
+
+?- place_in_district(khao_yoi, PLACE).
+PLACE = tai_dam_cultural_village ;
+PLACE = khao_yoi_cave ;
+false.
+```
+
 ## Implementation
   * `place_in_district(DISTRICT, PLACE)`
     * Find places by district
